@@ -30,7 +30,7 @@
 
 body {
     background-color: var(--base-color);
-    font-family: var(--mccubic), var(--mcseven), var(--mcten), ui-monospace, monospace;
+    font-family: ui-monospace, monospace;
     color: var(--text-color)
 }
 .ham-icon {
@@ -111,7 +111,7 @@ nav a {
      rgba(28, 29, 34, 0.7) 50%,
     rgba(28, 29, 34, 1) 100%
         ),
-        url("images/pine\ forest\ mc.jpg");
+        url("images/SanMarco.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -282,6 +282,7 @@ iframe {
 .info#before {
     background-color: var(--color1);
     padding: 3em 0;
+    display: none;
 }
 .info#before .content-con {
     flex: 1 1 20em;
@@ -337,6 +338,8 @@ h5 {
     }
     .info#about h2 {
         order: -1;
+        flex: 0 0 100%;
+        text-align: center;
     }
     .info#about img {
         order: 0;
@@ -344,6 +347,5 @@ h5 {
     .info#about .text-con {
         order: 1;
         flex: 0 0 100%;
-        width: 100%;
     }
 }
