@@ -96,7 +96,27 @@ nav a {
 }
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 50px;
+    list-style: none;
+}
+.process:hover .process-drop {
+    display: block;
+}
+.process > a {
+    display: inline-flex;
+    align-items: center;
+    gap: .4em;
+}
+.process-drop {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    list-style: none;
+    background-color: var(--base-color);
+    padding: 1em 1em;
+    margin: 1em 0 .75em -1.5em;
+    gap: 1em;
+    display: none;
 }
 .nav-right {
     margin-left: auto;
@@ -345,5 +365,11 @@ h5 {
     }
     .card-icon {
         font-size: 30px;
+    }
+    .infocards{
+        gap: 15px;
+    }
+    .infocard {
+        padding: .5em 1em;
     }
 }
