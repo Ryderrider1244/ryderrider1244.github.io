@@ -39,18 +39,21 @@ body {
     display: none;
 }
 .off-screen-menu {
-    background: var(--base-color);
+    background: black;
     height: 100vh;
     width: 100%;
     max-width: 280px;
     position: fixed;
     top: 0;
     right: -450px;
+
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    padding: .5em 1em;
+
     font-size: 3em;
     transition: right 0.3s ease;
     z-index: 2000;
@@ -66,6 +69,7 @@ body {
 .off-screen-menu a {
     color: var(--text-color);
     text-decoration: none;
+    font-size: .5em;
 }
 .off-screen-menu a:hover {
     color: var(--scarlet);
@@ -149,18 +153,6 @@ nav a {
     text-align: center;
     margin: auto 0;
 }
-.join {
-    font-size: 1.5em;
-    margin: 1em auto;
-    padding: .6em 1em;
-
-    text-decoration: none;
-    color: white;
-    background-color: var(--scarlet);
-
-    border-radius: .5em;
-    font-weight: 600;
-}
 
 .cta {
     display: inline-block;
@@ -173,10 +165,13 @@ nav a {
 }
 h1 + p {
     font-size: 2em; 
-    margin-top: .5em;
+    margin-bottom: 1em;
 }
 h1 {
     font-size: 7em;
+}
+.icon-br {
+    display: none;
 }
 .infocards {
     display: flex;
@@ -214,24 +209,22 @@ h1 {
     flex-direction: column;
 }
 .card-head {
-    font-family: var(--mccubic);
     font-size: 20px;
     font-weight: 600;
 }
 .card-subhead {
-    font-family: var(--mccubic);
     font-size: 15px;
     font-weight: 400;
     padding-bottom: .5em;
 }
-.infocard#social {
-    border: 1px solid var(--dis-color);
+.infocard#map {
+    border: 1px solid yellow;
 }
-.infocard#social, .infocard#copyIP, .join {
+.infocard {
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.infocard#social:hover, .infocard#copyIP:hover, .join:hover {
+.infocard:hover{
 
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -244,24 +237,23 @@ img {
     object-position: bottom;
 }
 h2, h3 {
-    margin: auto auto 1em auto;
+    margin-bottom: 1em;
     font-size: 2em;
 }
 iframe {
     width: 350px;
-    height: 350px;
+    height: 300px;
     margin-top: 2em;
 
 }
-.info#about .content-con {
+.info .content-con {
     flex: 1 1 35em;
     flex-direction: column;
     display: flex;
     align-items: flex-start;
     text-align: left;
-    margin-left: 4em;
 }
-.info#about .text-con {
+.info .text-con {
     flex-direction: column;
     display: flex;
     justify-content: center;
@@ -273,31 +265,12 @@ iframe {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    column-gap: 4em;
 
 }
-.info#about {
+.info {
     background-color: var(--base-color);
     padding: 3em 0;
-}
-.info#before {
-    background-color: var(--color1);
-    padding: 3em 0;
-    display: none;
-}
-.info#before .content-con {
-    flex: 1 1 20em;
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin-left: 4em;
-}
-.discta {
-    color: #7289DA;
-    text-decoration: none;
-}
-.discta:hover {
-    text-decoration: underline;
 }
 h4 {
     font-size: 2em;
@@ -309,43 +282,68 @@ h5 {
     color: var(--primary-color)
 }
 
-@media (max-width: 640px){ 
+@media (max-width: 640px) { 
     .nav-links, .nav-ip {
         display: none;
     }
     .ham-icon {
         display:unset
     }
-    h1 {
-        font-size: 4em;
-    }
     h1 + p {
         font-size: 1.5em;
     }
-    .icon {
-        margin: 0;
+    .icon-br {
+        display: block;
     }
     img, iframe {
     width: 250px;
     height: 250px;
     }
-    .info#about .content-con,
-    .info#before .content-con {
-        margin-left: 0;
-    }
-    .info#about .content-con {
+    .info .content-con {
     display: contents;
     }
-    .info#about h2 {
+    .info h2 {
         order: -1;
         flex: 0 0 100%;
         text-align: center;
     }
-    .info#about img {
+    .info img {
         order: 0;
     }
-    .info#about .text-con {
+    .info .text-con {
         order: 1;
         flex: 0 0 100%;
+    }
+}
+
+@media(max-width: 1046px) {
+    h1 {
+    font-size: 4em;
+    }
+    .info .content-con {
+    display: contents;
+    }
+    .info h2 {
+        order: -1;
+        flex: 0 0 100%;
+        text-align: center;
+        margin-bottom: 0em;
+    }
+    .info img {
+        order: 0;
+    }
+    .info .text-con {
+        order: 1;
+        flex: 0 0 100%;
+    }
+    .card-head {
+        font-size: 17px;
+    }
+    .card-subhead {
+        font-size: 12px;
+        padding-bottom: 0em;
+    }
+    .card-icon {
+        font-size: 30px;
     }
 }
