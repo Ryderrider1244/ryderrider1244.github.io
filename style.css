@@ -31,7 +31,8 @@
 body {
     background-color: var(--base-color);
     font-family: ui-monospace, monospace;
-    color: var(--text-color)
+    color: var(--text-color);
+    scroll-behavior: smooth;
 }
 .ham-icon {
     padding-right: 30px;
@@ -99,22 +100,25 @@ nav a {
     gap: 50px;
     list-style: none;
 }
-.process:hover .process-drop {
-    display: block;
+.process-nav:hover .process-nav-drop {
+    display: flex;
+}
+.process-nav-drop:hover .process-nav-drop {
+    display: flex;
 }
 .process > a {
     display: inline-flex;
     align-items: center;
     gap: .4em;
 }
-.process-drop {
+.process-nav-drop {
     display: flex;
     flex-direction: column;
     position: absolute;
     list-style: none;
     background-color: var(--base-color);
-    padding: 1em 1em;
-    margin: 1em 0 .75em -1.5em;
+    padding: 2em 1em 1em;
+    margin: 0em 0 .75em -1.5em;
     gap: 1em;
     display: none;
 }
@@ -250,9 +254,8 @@ h1 {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 img {
-    border-radius: 80%;
-    width: 350px;
-    height: 350px;
+    width: 400px;
+    height: 250px;
     object-fit: cover;
     object-position: bottom;
 }
@@ -266,27 +269,32 @@ iframe {
     margin-top: 2em;
 
 }
-.info .content-con {
+.content-con {
     flex: 1 1 35em;
     flex-direction: column;
     display: flex;
     align-items: flex-start;
     text-align: left;
 }
-.info .text-con {
+.text-con {
     flex-direction: column;
     display: flex;
     justify-content: center;
     text-align: left;
     flex: 1;
 }
-.info-con{
+.info-con, .process-con {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     column-gap: 4em;
 
+}
+.process .container {
+    padding: 2em;
+    background-color: var(--secondary-color);
+    height: 100vh;
 }
 .info {
     background-color: var(--base-color);
@@ -301,7 +309,9 @@ h5 {
 .green {
     color: var(--primary-color)
 }
-
+section {
+    scroll-margin-top: 90px;
+}
 @media (max-width: 640px) { 
     .nav-links, .nav-ip {
         display: none;
@@ -371,5 +381,8 @@ h5 {
     }
     .infocard {
         padding: .5em 1em;
+    }
+    .nav-links, .nav-ip {
+        display: none;
     }
 }
