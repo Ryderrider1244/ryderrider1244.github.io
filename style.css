@@ -269,6 +269,10 @@ iframe {
     margin-top: 2em;
 
 }
+
+.inline-cta {
+    color:var(--text-color)
+}
 .content-con {
     flex: 1 1 35em;
     flex-direction: column;
@@ -291,11 +295,28 @@ iframe {
     column-gap: 4em;
 
 }
+
+.pictures {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin: 2em auto;
+}
+
+.pictures img {
+    height: 300px;
+    width: 205px;
+    object-fit: cover;
+    object-position: center;
+}
+
 .process .container {
     padding: 2em;
     background-color: var(--secondary-color);
     height: 100vh;
 }
+
 .info {
     background-color: var(--base-color);
     padding: 3em 0;
