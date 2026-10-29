@@ -106,7 +106,7 @@ nav a {
 .process-nav-drop:hover .process-nav-drop {
     display: flex;
 }
-.process > a {
+.process-nav > a {
     display: inline-flex;
     align-items: center;
     gap: .4em;
@@ -288,11 +288,13 @@ iframe {
     flex: 1;
 }
 .info-con, .process-con {
+    flex-direction: row;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     column-gap: 4em;
+    width: 100%;
 
 }
 
@@ -311,10 +313,11 @@ iframe {
     object-position: center;
 }
 
-.process .container {
+.process {
     padding: 2em;
     background-color: var(--secondary-color);
     height: 100vh;
+    
 }
 
 .info {
